@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thư Mời Lễ Tốt Nghiệp - Nguyễn Hương Lâm</title>
+    <!-- Fonts: Cormorant Garamond (Serif), Great Vibes (Cursive), Montserrat (Sans-serif) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #EBF3F8;
+            --primary-color: #0F2C59; /* Navy */
+            --accent-color: #C5A880; /* Warm gold */
+            --text-dark: #1E293B; /* Slate dark */
+            --text-light: #7B8D9E; /* Slate light */
+            --midnight-blue: #0B192C; /* Deep midnight */
+            --card-bg: #FFFFFF;
+            --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            /* Gradient overlay blended with soft watercolor marble background image */
+            background-image: linear-gradient(135deg, rgba(240, 246, 250, 0.5) 0%, rgba(226, 236, 244, 0.55) 50%, rgba(206, 224, 238, 0.5) 100%), url('bg-watercolor-marble.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* --- Background Shimmer, Light Leaks & Bokeh Effects --- */
+        .background-effects {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        /* Large soft warm light leaks */
+        .light-leak {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.35;
+            pointer-events: none;
+        }
+
+        .leak-top-left {
+            top: -15%;
+            left: -15%;
+            width: 70vw;
+            height: 70vw;
+            background: radial-gradient(circle, rgba(255, 235, 195, 0.45) 0%, rgba(255, 255, 255, 0) 70%);
+            animation: driftLeak1 30s ease-in-out infinite alternate;
+        }
+
+        .leak-bottom-right {
+            bottom: -20%;
+            right: -15%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(212, 235, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+            animation: driftLeak2 24s ease-in-out infinite alternate;
+        }
+
+        /* Floating white blurry bokeh lights */
+        .bokeh {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            filter: blur(35px);
+            pointer-events: none;
+        }
+
+        .bokeh-1 {
+            width: 130px;
+            height: 130px;
+            top: 12%;
+            left: 8%;
+            animation: floatBokeh1 22s ease-in-out infinite;
+        }
+
+        .bokeh-2 {
+            width: 180px;
+            height: 180px;
+            bottom: 18%;
+            left: 4%;
+            animation: floatBokeh2 26s ease-in-out infinite;
+        }
+
+        .bokeh-3 {
+            width: 150px;
+            height: 150px;
+            top: 25%;
+            right: 6%;
+            animation: floatBokeh3 24s ease-in-out infinite;
+        }
+
+        .bokeh-4 {
+            width: 110px;
+            height: 110px;
+            bottom: 12%;
+            right: 10%;
+            animation: floatBokeh4 20s ease-in-out infinite;
+        }
+
+        @keyframes driftLeak1 {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(6vw, 4vh) scale(1.1); opacity: 0.25; }
+        }
+
+        @keyframes driftLeak2 {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(-5vw, -5vh) scale(1.15); opacity: 0.45; }
+        }
+
+        @keyframes floatBokeh1 {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
+            50% { transform: translate(35px, -50px) scale(1.25); opacity: 0.55; }
+        }
+
+        @keyframes floatBokeh2 {
+            0%, 100% { transform: translate(0, 0) scale(1.1); opacity: 0.2; }
+            50% { transform: translate(-30px, 40px) scale(0.9); opacity: 0.4; }
+        }
+
+        @keyframes floatBokeh3 {
+            0%, 100% { transform: translate(0, 0) scale(0.95); opacity: 0.3; }
+            50% { transform: translate(40px, 30px) scale(1.2); opacity: 0.5; }
+        }
+
+        @keyframes floatBokeh4 {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.15; }
+            50% { transform: translate(-45px, -30px) scale(1.3); opacity: 0.35; }
+        }
+
+        /* Container & Animations */
+        .container {
+            width: 100%;
+            max-width: 440px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .animate-item {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Music Floating Button */
+        .music-btn {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(197, 168, 128, 0.3);
+            box-shadow: 0 8px 32px rgba(15, 44, 89, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: var(--primary-color);
+        }
+
+        .music-btn:hover {
+            transform: scale(1.08);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 12px 35px rgba(15, 44, 89, 0.15);
+        }
+
+        .music-btn:active {
+            transform: scale(0.95);
+        }
+
+        .music-icon-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Pulsing indicator when music is NOT playing to invite user interaction */
+        .music-btn::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border-radius: 50%;
+            border: 2px solid rgba(197, 168, 128, 0.4);
+            animation: pulse 2.2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+            pointer-events: none;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .music-btn.playing::after {
+            opacity: 0;
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.8;
+            }
+            70% {
+                transform: scale(1.2);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+        }
+
+        /* Rotating icon animation when playing */
+        .music-btn.playing .music-icon-wrapper {
+            animation: spin 8s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* --- Typography --- */
+        .header-sub {
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .header-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 34px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            color: var(--primary-color);
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .header-ceremony {
+            font-family: 'Great Vibes', cursive;
+            font-size: 34px;
+            color: #6B8CAE; /* Light pastel blue */
+            margin-top: -14px; /* Layering overlay effect */
+            margin-bottom: 20px;
+            display: inline-block;
+            transform: rotate(-3deg);
+        }
+
+        /* Candidate info */
+        .name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 40px;
+            font-weight: 600;
+            color: var(--midnight-blue);
+            margin-bottom: 6px;
+            letter-spacing: 1px;
+        }
+
+        .class-info {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            color: #64748B;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        /* Elegant Card Decoration */
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px 25px;
+            box-shadow: 0 20px 40px rgba(15, 44, 89, 0.06);
+            border: 1px solid rgba(220, 230, 241, 0.7);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 24px 50px rgba(15, 44, 89, 0.1);
+        }
+
+        /* Inner border for invitation elegance */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            right: 12px;
+            bottom: 12px;
+            border: 1px solid rgba(197, 168, 128, 0.3);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        .card-title {
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+
+        .time-range {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 22px;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        /* Elegant Ticket-style Date Box */
+        .date-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .date-col {
+            text-align: center;
+            width: 85px;
+        }
+
+        .date-label {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 9px;
+            color: var(--text-light);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .date-val {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .date-day {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 64px; /* Very large number */
+            font-weight: 400; /* Delicate fine serif line */
+            color: var(--primary-color);
+            line-height: 0.8;
+            padding: 0 15px;
+        }
+
+        .date-divider {
+            width: 1px;
+            height: 40px;
+            background-color: rgba(197, 168, 128, 0.3);
+        }
+
+        /* Location Layout */
+        .location-section {
+            border-top: 1px dashed rgba(197, 168, 128, 0.25);
+            padding-top: 25px;
+            margin-top: 10px;
+        }
+
+        .location-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            color: var(--text-light);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .location-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .location-address {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #64748B;
+            line-height: 1.5;
+        }
+
+        /* Button design */
+        .btn-map {
+            display: inline-block;
+            margin-top: 20px; /* Reduced from 35px to align with thank-you card */
+            padding: 14px 40px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1c4987 100%);
+            border-radius: 30px;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            box-shadow: 0 6px 20px rgba(15, 44, 89, 0.2);
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-map:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(15, 44, 89, 0.35);
+            background: linear-gradient(135deg, #13386e 0%, var(--primary-color) 100%);
+        }
+
+        .btn-map:active {
+            transform: translateY(-1px);
+        }
+
+        /* Thank-you card notes */
+        .thank-you-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(197, 168, 128, 0.35);
+            border-radius: 16px;
+            padding: 30px 42px;
+            margin: 20px auto 10px auto;
+            max-width: 440px;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            text-align: center;
+            overflow: visible;
+        }
+
+        .thank-you-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #0B192C;
+            margin: 0;
+            text-shadow: 0 0 1px rgba(255,255,255,0.5);
+        }
+
+        .quote-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            color: rgba(197, 168, 128, 0.3);
+            position: absolute;
+            line-height: 1;
+            user-select: none;
+        }
+
+        .quote-mark.open {
+            top: 2px;
+            left: 14px;
+        }
+
+        .quote-mark.close {
+            bottom: -15px;
+            right: 14px;
+        }
+
+        /* Mobile specific thank you card settings */
+        @media (max-width: 768px) {
+            .thank-you-card {
+                padding: 24px 28px;
+                margin: 15px auto 5px auto;
+                max-width: 92%;
+            }
+            .thank-you-text {
+                font-size: 13.5px;
+                line-height: 1.6;
+            }
+            .quote-mark {
+                font-size: 40px;
+            }
+            .quote-mark.open {
+                top: 2px;
+                left: 10px;
+            }
+            .quote-mark.close {
+                bottom: -12px;
+                right: 10px;
+            }
+        }
+
+        /* Decorative ornament */
+        .ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 25px;
+            color: var(--accent-color);
+        }
+
+        .ornament .line {
+            width: 45px;
+            height: 1px;
+            background-color: rgba(197, 168, 128, 0.3);
+        }
+
+        .ornament .diamond {
+            font-size: 8px;
+            transform: rotate(45deg);
+        }
+
+        /* Falling Elements Container */
+        #falling-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 99;
+            overflow: hidden;
+        }
+
+        .falling-item {
+            position: absolute;
+            top: -50px;
+            user-select: none;
+            pointer-events: none;
+            animation: fall var(--fall-duration) linear forwards;
+        }
+
+        .sway-wrapper {
+            animation: sway var(--sway-duration) ease-in-out infinite alternate;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            10% {
+                opacity: var(--max-opacity);
+            }
+            90% {
+                opacity: var(--max-opacity);
+            }
+            100% {
+                transform: translateY(105vh);
+                opacity: 0;
+            }
+        }
+
+        @keyframes sway {
+            0% {
+                transform: translateX(var(--sway-distance-neg)) rotate(var(--rot-start));
+            }
+            100% {
+                transform: translateX(var(--sway-distance-pos)) rotate(var(--rot-end));
+            }
+        }
+
+        /* Responsive Settings */
+        @media (max-width: 480px) {
+            body {
+                padding: 30px 15px;
+            }
+            .container {
+                max-width: 100%;
+            }
+            .card {
+                padding: 35px 20px;
+            }
+            .name {
+                font-size: 34px;
+            }
+            .date-day {
+                font-size: 56px;
+            }
+            .date-col {
+                width: 75px;
+            }
+            .music-btn {
+                top: 15px;
+                left: 15px;
+                right: auto;
+                width: 44px;
+                height: 44px;
+            }
+        }
+
+        /* --- Graduation Sash Style --- */
+        .graduation-sash {
+            position: fixed;
+            top: 0;
+            right: 25px; /* Pinned fixed at top: 0, right: 25px as requested */
+            width: 66px;
+            height: 320px; /* Shortened to fit the text closely */
+            z-index: 999;
+            filter: drop-shadow(0 10px 25px rgba(15, 44, 89, 0.25));
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+            transform-origin: top center; /* Origin at the top for swinging effect */
+            opacity: 0;
+            animation: sashSlideDown 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards, sashWave 5s ease-in-out infinite alternate 1.2s;
+        }
+
+        @keyframes sashSlideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100%) rotate(0deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        @keyframes sashWave {
+            0% {
+                transform: rotate(-1deg) skewX(-0.5deg);
+            }
+            100% {
+                transform: rotate(1deg) skewX(0.5deg);
+            }
+        }
+
+        .sash-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .sash-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Flow top to bottom */
+            height: 100%;
+            width: 100%;
+            padding: 20px 4px 25px 4px;
+            box-sizing: border-box;
+        }
+
+        .sash-cap {
+            color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2px;
+        }
+
+        .sash-cap svg {
+            width: 24px;
+            height: 24px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+        }
+
+        .sash-class {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 15px; /* Slightly larger, matching mockup */
+            color: #FFFFFF;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            margin-top: 4px;
+            margin-bottom: 12px; /* Nicely separates K21 from the vertical text */
+        }
+
+        .sash-text-group {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin: 0 auto;
+        }
+
+        .sash-name {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 13.5px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            white-space: nowrap;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .sash-divider {
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.7);
+            height: 185px; /* Adjusted height to fit shorter sash */
+            align-self: center;
+            margin: 0 3px;
+        }
+
+        .sash-major {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-style: italic; /* nghiêng nhẹ */
+            font-size: 7.5px;
+            color: #FFFFFF; /* White font matching mockup */
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            opacity: 0.95;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+        }
+
+        /* Sparkles & Glitter Background Effects */
+        .bg-sparkle {
+            position: absolute;
+            pointer-events: none;
+            z-index: 2;
+            animation: sparklePulse 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes sparklePulse {
+            0% {
+                opacity: 0.1;
+                transform: scale(0.3) rotate(0deg);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1) rotate(45deg);
+            }
+            100% {
+                opacity: 0.1;
+                transform: scale(0.3) rotate(90deg);
+            }
+        }
+
+        /* Responsive settings for Sash */
+        @media (max-width: 768px) {
+            .graduation-sash {
+                right: 10px;
+                top: 0;
+                width: 44px;
+                height: 230px; /* Shortened for mobile layout */
+            }
+            .sash-content {
+                padding: 12px 2px 18px 2px;
+            }
+            .sash-cap svg {
+                width: 16px;
+                height: 16px;
+            }
+            .sash-class {
+                font-size: 11px;
+                margin-top: 2px;
+                margin-bottom: 8px;
+            }
+            .sash-divider {
+                height: 130px;
+                margin: 0 1px;
+            }
+            .sash-name {
+                font-size: 10px;
+                letter-spacing: 1px;
+            }
+            .sash-major {
+                font-size: 5.8px;
+                letter-spacing: 0.1px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hidden SVG for global gradient definitions -->
+    <svg style="display: none; width: 0; height: 0;">
+        <defs>
+            <linearGradient id="cherry-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFC5D3" />
+                <stop offset="100%" stop-color="#FF7B9E" />
+            </linearGradient>
+            <linearGradient id="apricot-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFF2A1" />
+                <stop offset="100%" stop-color="#FFB300" />
+            </linearGradient>
+            <linearGradient id="sparkle-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFFFFF" />
+                <stop offset="100%" stop-color="#FFE082" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <!-- Graduation Sash Treo Dọc Cố Định -->
+    <div class="graduation-sash">
+        <!-- SVG background với hình dáng vạt vuông ở đầu và đuôi cá ở đáy -->
+        <svg class="sash-bg" viewBox="0 0 100 500" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="sash-satin" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#050E18" />
+                    <stop offset="25%" stop-color="#142C4B" />
+                    <stop offset="50%" stop-color="#0B192C" />
+                    <stop offset="75%" stop-color="#1C3B63" />
+                    <stop offset="100%" stop-color="#050E18" />
+                </linearGradient>
+                <linearGradient id="silver-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFFFFF" />
+                    <stop offset="50%" stop-color="#E2E8F0" />
+                    <stop offset="100%" stop-color="#CBD5E1" />
+                </linearGradient>
+            </defs>
+            <!-- Lớp màu Navy satin vải bóng (đầu trên vuông, đuôi én nhọn ở đáy) -->
+            <path d="M 0 0 L 100 0 L 100 480 L 50 450 L 0 480 Z" fill="url(#sash-satin)" />
+            <!-- Viền ngoài kép màu bạc -->
+            <path d="M 3 3 L 97 3 L 97 475 L 50 447 L 3 475 Z" fill="none" stroke="url(#silver-grad)" stroke-width="1.8" />
+            <!-- Viền trong kép mảnh -->
+            <path d="M 8 8 L 92 8 L 92 469 L 50 442 L 8 469 Z" fill="none" stroke="url(#silver-grad)" stroke-width="0.8" opacity="0.8" />
+        </svg>
+        <div class="sash-content">
+            <!-- Icon mũ tốt nghiệp 🎓 -->
+            <div class="sash-cap" style="font-size: 24px; line-height: 1;">🎓</div>
+            <!-- Chữ viết dọc xếp ngang: Chuyên ngành bên trái (dưới dòng), Vách ngăn, Tên bên phải -->
+            <div class="sash-text-group">
+                <div class="sash-major">Fintech and Digital Business</div>
+                <div class="sash-divider"></div>
+                <div class="sash-name">NGUYỄN HƯƠNG LAM</div>
+            </div>
+            <!-- Khóa học K21 ở dưới cùng -->
+            <div class="sash-class">K21</div>
+        </div>
+    </div>
+
+    <!-- Background Light Leaks and Bokeh Glows -->
+    <div class="background-effects">
+        <div class="light-leak leak-top-left"></div>
+        <div class="light-leak leak-bottom-right"></div>
+        <div class="bokeh bokeh-1"></div>
+        <div class="bokeh bokeh-2"></div>
+        <div class="bokeh bokeh-3"></div>
+        <div class="bokeh bokeh-4"></div>
+    </div>
+
+    <!-- Falling particles -->
+    <div id="falling-container"></div>
+
+    <!-- Music Player Controls -->
+    <button id="music-toggle" class="music-btn" aria-label="Bật/Tắt Nhạc">
+        <div class="music-icon-wrapper">
+            <svg viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor" d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+            </svg>
+        </div>
+    </button>
+
+    <audio id="bg-music" loop preload="auto" autoplay>
+        <!-- Thử phát file nhạc cục bộ cấu hình bởi người dùng -->
+        <source src="song-nhu-nhung-doa-hoa.mp3" type="audio/mpeg">
+        <!-- Đường dẫn nhạc dự phòng trực tuyến (piano không lời nhẹ nhàng) -->
+        <source src="https://www.no-copyright-music.com/wp-content/uploads/2021/09/OnAPianoCloud.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ phát nhạc.
+    </audio>
+
+    <div class="container">
+        <!-- Sub-header & Title -->
+        <div class="header-sub animate-item delay-1">YOU ARE INVITED TO</div>
+        <div class="header-title animate-item delay-1">GRADUATION</div>
+        <div class="header-ceremony animate-item delay-1">Ceremony</div>
+        
+        <!-- Ornament divider -->
+        <div class="ornament animate-item delay-2">
+            <span class="line"></span>
+            <span class="diamond">◆</span>
+            <span class="line"></span>
+        </div>
+
+        <!-- Graduate Name -->
+        <div class="name animate-item delay-2">Nguyen Huong Lam</div>
+        <div class="class-info animate-item delay-2">Class of 2026 🎓</div>
+
+        <!-- Main Card details -->
+        <div class="card animate-item delay-3">
+            <div class="card-title">THÂN MỜI</div>
+            <div class="time-range">11:00 hoặc 18:30, CHỦ NHẬT</div>
+            
+            <!-- Date ticket format -->
+            <div class="date-box">
+                <div class="date-col">
+                    <span class="date-label">THÁNG</span>
+                    <span class="date-val">08</span>
+                </div>
+                <div class="date-divider"></div>
+                <div class="date-day">23</div>
+                <div class="date-divider"></div>
+                <div class="date-col">
+                    <span class="date-label">NĂM</span>
+                    <span class="date-val">2026</span>
+                </div>
+            </div>
+
+            <!-- Venue section -->
+            <div class="location-section">
+                <div class="location-label">Tại địa điểm</div>
+                <div class="location-name">TRUNG TÂM HỘI NGHỊ QUỐC GIA (NCC)</div>
+                <div class="location-address">Đường Phạm Hùng, Từ Liêm, Hà Nội</div>
+            </div>
+        </div>
+
+        <!-- Khung thiệp phụ lời cảm ơn -->
+        <div class="thank-you-card animate-item delay-4">
+            <span class="quote-mark open">“</span>
+            <p class="thank-you-text">Chặng đường 4 năm đại học của mình đến đây là kết thúc, xin cảm ơn bạn đã đồng hành cùng mình những năm tháng qua. Sự có mặt của bạn trong ngày mình tốt nghiệp là vinh dự rất lớn đối với mình.</p>
+            <span class="quote-mark close">”</span>
+        </div>
+
+        <!-- Call to action button -->
+        <div class="animate-item delay-4">
+            <a href="https://maps.google.com/?q=Trung+t%C3%A2m+H%E1%BB%99i+ngh%E1%BB%8B+Qu%E1%BB%91c+gia" target="_blank" class="btn-map">
+                XEM CHỈ ĐƯỜNG ↗
+            </a>
+        </div>
+    </div>
+
+    <!-- Scripts for music and falling items -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- 1. Music Autoplay and Controls ---
+            const music = document.getElementById('bg-music');
+            const musicBtn = document.getElementById('music-toggle');
+            let isMusicInitialized = false;
+
+            // Reduce volume slightly for gentler background playback
+            music.volume = 0.5;
+
+            function playMusic() {
+                music.play()
+                    .then(() => {
+                        musicBtn.classList.add('playing');
+                    })
+                    .catch(err => {
+                        console.log("Không thể tự động phát nhạc do chính sách trình duyệt. Chờ tương tác người dùng.", err);
+                    });
+            }
+
+            // Attempt to autoplay immediately on load (if browser allows it)
+            playMusic();
+
+            const interactionEvents = ['click', 'touchstart', 'scroll', 'mousedown', 'keydown', 'pointerdown'];
+
+            function initializeAudioOnInteraction() {
+                if (isMusicInitialized) return;
+                isMusicInitialized = true;
+                playMusic();
+
+                // Clean up interaction listeners
+                interactionEvents.forEach(event => {
+                    window.removeEventListener(event, initializeAudioOnInteraction);
+                    document.removeEventListener(event, initializeAudioOnInteraction);
+                });
+            }
+
+            // Listen to any interaction anywhere on the document/window to trigger autoplay
+            interactionEvents.forEach(event => {
+                window.addEventListener(event, initializeAudioOnInteraction, { passive: true });
+                document.addEventListener(event, initializeAudioOnInteraction, { passive: true });
+            });
+
+            // Manual toggle button action
+            musicBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Avoid triggering document level initializers
+                isMusicInitialized = true; // Mark as initialized since user interacts directly
+
+                if (music.paused) {
+                    music.play().then(() => {
+                        musicBtn.classList.add('playing');
+                    });
+                } else {
+                    music.pause();
+                    musicBtn.classList.remove('playing');
+                }
+            });
+
+
+            // --- 2. Falling Particles Effect (Emoji 🎓 and 💐) ---
+            const container = document.getElementById('falling-container');
+            const particleTypes = [
+                { char: '🎓', weight: 1 },
+                { char: '💐', weight: 1 }
+            ];
+
+            const particlePool = [];
+            particleTypes.forEach(p => {
+                for (let i = 0; i < p.weight; i++) {
+                    particlePool.push(p.char);
+                }
+            });
+
+            function createParticle() {
+                // Giới hạn số lượng hạt chạy đồng thời để đảm bảo mượt mà trên di động
+                if (container.childElementCount > 25) return;
+
+                const particle = document.createElement('div');
+                particle.className = 'falling-item';
+                
+                const swayWrapper = document.createElement('div');
+                swayWrapper.className = 'sway-wrapper';
+                
+                // Lấy ngẫu nhiên emoji từ pool
+                swayWrapper.innerText = particlePool[Math.floor(Math.random() * particlePool.length)];
+                
+                particle.appendChild(swayWrapper);
+                
+                // Random vị trí xuất phát ngang và kích thước
+                const leftPos = Math.random() * 100; // vw
+                particle.style.left = `${leftPos}vw`;
+                
+                const size = Math.random() * 12 + 16; // 16px đến 28px
+                particle.style.fontSize = `${size}px`;
+                
+                // Thiết lập các thuộc tính hoạt họa ngẫu nhiên
+                const fallDuration = Math.random() * 6 + 8; // Rơi chậm rãi, nhẹ nhàng hơn: 8s - 14s
+                const swayDuration = Math.random() * 4 + 3; // Lắc lư: 3s - 7s
+                
+                const swayDistance = Math.random() * 30 + 15; // Biên độ lắc lư: 15px - 45px
+                const rotStart = Math.random() * 60 - 30; // Góc xoay bắt đầu
+                const rotEnd = Math.random() * 360 - 180; // Góc xoay kết thúc (xoay tự nhiên)
+                const maxOpacity = Math.random() * 0.2 + 0.25; // Độ mờ nhẹ (alpha từ 0.25 đến 0.45) để hòa vào nền
+
+                particle.style.setProperty('--fall-duration', `${fallDuration}s`);
+                particle.style.setProperty('--max-opacity', maxOpacity);
+                
+                swayWrapper.style.setProperty('--sway-duration', `${swayDuration}s`);
+                swayWrapper.style.setProperty('--sway-distance-neg', `${-swayDistance}px`);
+                swayWrapper.style.setProperty('--sway-distance-pos', `${swayDistance}px`);
+                swayWrapper.style.setProperty('--rot-start', `${rotStart}deg`);
+                swayWrapper.style.setProperty('--rot-end', `${rotEnd}deg`);
+
+                container.appendChild(particle);
+
+                // Tự động dọn dẹp phần tử sau khi kết thúc animation rơi
+                setTimeout(() => {
+                    particle.remove();
+                }, fallDuration * 1000);
+            }
+
+            // --- 3. Tạo các hạt lấp lánh tĩnh nhấp nháy trên nền ---
+            const backgroundEffects = document.querySelector('.background-effects');
+            function createBackgroundSparkles() {
+                for (let i = 0; i < 18; i++) {
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'bg-sparkle';
+                    sparkle.style.top = `${Math.random() * 90}vh`;
+                    sparkle.style.left = `${Math.random() * 95}vw`;
+                    sparkle.style.transform = `scale(${Math.random() * 0.5 + 0.35})`;
+                    sparkle.style.animationDelay = `${Math.random() * 5}s`;
+                    sparkle.style.animationDuration = `${Math.random() * 4 + 3}s`;
+                    
+                    sparkle.innerHTML = `
+                        <svg viewBox="0 0 24 24" width="16" height="16">
+                            <path fill="#FFFFFF" opacity="0.8" d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5Z"/>
+                        </svg>
+                    `;
+                    backgroundEffects.appendChild(sparkle);
+                }
+            }
+
+            // Khởi tạo hiệu ứng nền
+            createBackgroundSparkles();
+
+            // Khởi động các hạt rơi ban đầu
+            for (let i = 0; i < 6; i++) {
+                setTimeout(createParticle, Math.random() * 3000);
+            }
+
+            // Vòng lặp liên tục tạo cánh hoa rơi nhẹ nhàng
+            setInterval(createParticle, 450);
+        });
+    </script>
+</body>
+</html>
